@@ -1,4 +1,4 @@
-{% set version = '0.5-9' %}
+{% set version = "0.6.2" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,11 +12,11 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/brglm_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/brglm/brglm_{{ version }}.tar.gz
-  sha256: 5b70bc8216d1af37304e5e7c6e902b92327cc2aad5798ea6ba1634dfab921d92
+  sha256: c2af432a43ccf37e9de50317f770b9703a4c80b4ef79ec40aa8e7ec3987e3631
 
 build:
   merge_build_host: True  # [win]
-  number: 1002
+  number: 0
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
