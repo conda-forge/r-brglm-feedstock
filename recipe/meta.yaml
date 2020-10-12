@@ -1,4 +1,4 @@
-{% set version = "0.6.2" %}
+{% set version = "0.7.1" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,11 +12,11 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/brglm_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/brglm/brglm_{{ version }}.tar.gz
-  sha256: c2af432a43ccf37e9de50317f770b9703a4c80b4ef79ec40aa8e7ec3987e3631
+  sha256: 4a1f198e7893e906734844a21f7b7d049666d9746dbb6a4e561df2a782aac8ec
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -43,18 +43,11 @@ test:
 about:
   home: http://www.ucl.ac.uk/~ucakiko/index.html
   license: GPL (>= 2)
-  summary: Fit generalized linear models with binomial responses using either an adjusted-score
-    approach to bias reduction or maximum penalized likelihood where penalization is
-    by Jeffreys invariant prior. These procedures return estimates with improved frequentist
-    properties (bias, mean squared error) that are always finite even in cases where
-    the maximum likelihood estimates are infinite (data separation). Fitting takes place
-    by fitting generalized linear models on iteratively updated pseudo-data. The interface
-    is essentially the same as 'glm'.  More flexibility is provided by the fact that
-    custom pseudo-data representations can be specified and used for model fitting.
-    Functions are provided for the construction of confidence intervals for the reduced-bias
-    estimates.
+  summary: Fit generalized linear models with binomial responses using either an adjusted-score approach to bias reduction or maximum penalized likelihood where penalization is by Jeffreys invariant prior. These procedures return estimates with improved frequentist properties (bias, mean squared error) that are always finite
+    even in cases where the maximum likelihood estimates are infinite (data separation). Fitting takes place by fitting generalized linear models on iteratively updated pseudo-data. The interface is essentially the same as 'glm'.  More flexibility is provided by the fact that custom pseudo-data representations can be specified
+    and used for model fitting. Functions are provided for the construction of confidence intervals for the reduced-bias estimates.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
