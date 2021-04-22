@@ -3,7 +3,7 @@ About r-brglm
 
 Home: http://www.ucl.ac.uk/~ucakiko/index.html
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-brglm-feedstock/blob/master/LICENSE.txt)
 
