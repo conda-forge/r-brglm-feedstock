@@ -1,5 +1,4 @@
 {% set version = "0.7.2" %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,7 +7,6 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: brglm_{{ version }}.tar.gz
   url:
     - https://cran.r-project.org/src/contrib/brglm_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/brglm/brglm_{{ version }}.tar.gz
@@ -17,22 +15,25 @@ source:
 build:
   merge_build_host: true  # [win]
   number: 0
-  skip: true  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - posix                # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}make
+    - {{ posix }}sed               # [win]
+    - {{ posix }}coreutils         # [win]
+    - {{ posix }}zip               # [win]
   host:
     - r-base
     - r-profilemodel
-
   run:
     - r-base
+    - {{ native }}gcc-libs         # [win]
     - r-profilemodel
 
 test:
@@ -42,12 +43,13 @@ test:
 
 about:
   home: http://www.ucl.ac.uk/~ucakiko/index.html
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: Fit generalized linear models with binomial responses using either an adjusted-score approach to bias reduction or maximum penalized likelihood where penalization is by Jeffreys invariant prior. These procedures return estimates with improved frequentist properties (bias, mean squared error) that are always finite
     even in cases where the maximum likelihood estimates are infinite (data separation). Fitting takes place by fitting generalized linear models on iteratively updated pseudo-data. The interface is essentially the same as 'glm'.  More flexibility is provided by the fact that custom pseudo-data representations can be specified
     and used for model fitting. Functions are provided for the construction of confidence intervals for the reduced-bias estimates.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
