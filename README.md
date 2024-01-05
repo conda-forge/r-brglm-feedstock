@@ -3,6 +3,7 @@ About r-brglm-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-brglm-feedstock/blob/main/LICENSE.txt)
 
+
 About r-brglm
 -------------
 
@@ -11,6 +12,7 @@ Home: http://www.ucl.ac.uk/~ucakiko/index.html
 Package license: GPL-2.0-or-later
 
 Summary: Fit generalized linear models with binomial responses using either an adjusted-score approach to bias reduction or maximum penalized likelihood where penalization is by Jeffreys invariant prior. These procedures return estimates with improved frequentist properties (bias, mean squared error) that are always finite even in cases where the maximum likelihood estimates are infinite (data separation). Fitting takes place by fitting generalized linear models on iteratively updated pseudo-data. The interface is essentially the same as 'glm'.  More flexibility is provided by the fact that custom pseudo-data representations can be specified and used for model fitting. Functions are provided for the construction of confidence intervals for the reduced-bias estimates.
+
 About r-brglm
 -------------
 
@@ -24,7 +26,14 @@ Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>Travis</td>
+    <td>
+      <a href="https://app.travis-ci.com/conda-forge/r-brglm-feedstock">
+        <img alt="linux" src="https://img.shields.io/travis/com/conda-forge/r-brglm-feedstock/main.svg?label=Linux">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>
@@ -49,6 +58,34 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1014&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-brglm-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_r_base4.3" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_r_base4.2</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1014&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-brglm-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_r_base4.2" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_r_base4.3</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1014&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-brglm-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_r_base4.3" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_r_base4.2</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1014&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-brglm-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_r_base4.2" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_r_base4.3</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1014&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-brglm-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_r_base4.3" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -153,7 +190,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
