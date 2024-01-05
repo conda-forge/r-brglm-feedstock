@@ -7,7 +7,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-brglm-feedsto
 About r-brglm
 -------------
 
-Home: http://www.ucl.ac.uk/~ucakiko/index.html
+Home: https://github.com/ikosmidis/brglm
 
 Package license: GPL-2.0-or-later
 
@@ -16,7 +16,7 @@ Summary: Fit generalized linear models with binomial responses using either an a
 About r-brglm
 -------------
 
-Home: http://www.ucl.ac.uk/~ucakiko/index.html
+Home: https://github.com/ikosmidis/brglm
 
 Package license: GPL-2.0-or-later
 
