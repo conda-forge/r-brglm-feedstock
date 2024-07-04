@@ -1,6 +1,5 @@
 {% set version = "0.7.2" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-brglm
@@ -13,8 +12,7 @@ source:
   sha256: 56098d2ce238478e7a27cacc4cdec0bc65f287fe746b38fbb1edda20c1675023
 
 build:
-  merge_build_host: true  # [win]
-  number: 3
+  number: 4
   rpaths:
     - lib/R/lib/
     - lib/
@@ -22,7 +20,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}          # [not win]
+    - {{ stdlib("c") }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
+    - {{ stdlib("m2w64_c") }}      # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -33,7 +33,6 @@ requirements:
     - r-profilemodel
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-profilemodel
 
 test:
